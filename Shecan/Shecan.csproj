@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <ApplicationIcon>40_104848.ico</ApplicationIcon>
+	<VersionPrefix>1.1</VersionPrefix>
   </PropertyGroup>
 
   <ItemGroup>

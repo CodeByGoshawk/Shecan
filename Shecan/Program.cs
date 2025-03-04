@@ -23,7 +23,7 @@ try
     if (upNetworks.Count() > 1)
     {
         Console.Clear();
-        Console.WriteLine("*****Turn Off The VPN*****");
+        Console.WriteLine("*****Turn The VPN Off*****");
         for (int i = 0; i < 2; i++)
         {
             Console.Beep(1000, 100);
@@ -49,8 +49,8 @@ try
     {
         Console.BackgroundColor = ConsoleColor.DarkGreen;
         Console.Clear();
-        processInfo.Arguments = $"/c netsh interface ipv4 add dnsservers {targetNetwork.Name} address=178.22.122.100 index=1 && " +
-                                $"netsh interface ipv4 add dnsservers {targetNetwork.Name} address=185.51.200.2 index=2";
+        processInfo.Arguments = $"/c netsh interface ipv4 add dnsservers \"{targetNetwork.Name}\" address=178.22.122.100 index=1 && " +
+                                $"netsh interface ipv4 add dnsservers \"{targetNetwork.Name}\" address=185.51.200.2 index=2";
         Console.WriteLine("*****Enabling Shecan*****");
         for (int i = 0; i < 3; i++)
         {
@@ -61,9 +61,9 @@ try
     {
         Console.BackgroundColor = ConsoleColor.Red;
         Console.Clear();
-        processInfo.Arguments = $"/c netsh interface ipv4 set dnsservers {targetNetwork.Name} dhcp";
+        processInfo.Arguments = $"/c netsh interface ipv4 set dnsservers \"{targetNetwork.Name}\" dhcp";
         Console.WriteLine("*****Disabling Shecan*****");
-        Console.Beep(1000, 100);
+        Console.Beep(1000, 100); 
     }
 
     Process.Start(processInfo);
